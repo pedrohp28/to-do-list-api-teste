@@ -1,0 +1,35 @@
+version: '3.9'
+services:
+  db:
+    image: mysql:8.0.39
+    container_name: todolist-db
+    restart: always
+    environment:
+      TZ: America/Sao_Paulo
+      MYSQL_ROOT_PASSWORD: senha123
+      MYSQL_DATABASE: todolist_db
+      MYSQL_TCP_PORT: 3308
+    ports:
+      - 3308:3308
+    networks:
+      - pedrohp28
+  api:
+    image: pedrohp28/api
+    restart: always
+    build: ./toDoList
+    working_dir: /toDoList
+    environment:
+      TZ: America/Sao_Paulo
+      SPRING.DATASOURCE.URL: jdbc:mysql://db:3308/todolist_db?useTimezone=true&serverTimezone=UTC
+      SPRING.DATASOURCE.USERNAME: root
+      SPRING.DATASOURCE.PASSWORD: senha123
+    ports:
+      - 8080:8080
+    command: mvn spring-boot:run
+    depends_on:
+      - db
+    networks:
+      - pedrohp28
+networks:
+  pedrohp28:
+    driver: bridge
