@@ -3,7 +3,7 @@ spring:
     name: toDoList
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/toDoListDB
+    url: jdbc:mysql://localhost:3306/todolist_db
     username: root
     password: senha123
   jpa:
