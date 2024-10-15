@@ -21,4 +21,4 @@ Para executar a api pelo docker utilize o arquivo <a href= "docker-compose.yml">
 A documentação pode ser acessada após a execução da api em <a href = "http://localhost:8080/swagger-ui.html"> http://localhost:8080/swagger-ui.html </a>. Também pode ser encontradas no log da api.
 
 ## Funcionalidade:
-A aplicação permite cadastrar tarefas com sua descrição, recuperar as tarefas já cadastradas, atualizar os status das tarefas de "a fazer" para "feito" e vice-versa, e por fim permite uma tarefa selecionada.
+A aplicação permite cadastrar tarefas com sua descrição, recuperar as tarefas já cadastradas, atualizar os status das tarefas de "a fazer" para "feito" e vice-versa, e por fim permite deletar uma tarefa selecionada.
